@@ -1,0 +1,24 @@
+SELECT *FROM cart;
+
+SELECT *FROM products
+WHERE productid=2;
+
+SELECT address1 FROM users
+WHERE address1 LIKE '% %';
+
+SELECT *FROM products
+INNER JOIN cart ON cart.productId=products.productId;
+
+SELECT DISTINCT firstName FROM users
+INNER JOIN cart on cart.userId=users.userId;
+
+SELECT *FROM Products
+WHERE price>=10
+ORDER BY price;
+
+SELECT P.price,P.description,C.name FROM products AS P
+JOIN categories as C on C.categoryId=P.categoryId
+WHERE P.price>=10
+ORDER BY price;
+
+SELECT *FROM users;
