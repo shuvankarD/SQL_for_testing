@@ -1,0 +1,20 @@
+UPDATE products
+SET Name =" 14 inch LCD monitor";
+
+SELECT * FROM products;
+
+
+UPDATE products
+SET Name ="it's not a bug it's a feature"
+WHERE productId=3;
+
+SELECT * FROM products;
+
+SELECT * FROM cart;
+
+DELETE FROM products
+WHERE productId=3;
+
+DELETE FROM cart
+WHERE productId=3;
+
