@@ -1,0 +1,16 @@
+SELECT *FROM products;
+
+INSERT INTO products
+SELECT productId+12, name, price, description, image, stock, categoryId FROM products;
+
+
+/***********************/
+INSERT INTO categories(categoryId, name)
+VALUES(5,"testers");
+SELECT *FROM categories;
+
+
+UPDATE products 
+SET categoryId=5
+WHERE name LIKE "%tester%";
+
