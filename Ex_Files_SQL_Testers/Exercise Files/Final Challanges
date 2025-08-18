@@ -1,0 +1,42 @@
+SELECT *FROM classes;
+SELECT *FROM enrollments;
+SELECT *FROM roles;
+
+
+/**** First Problem ****/
+SELECT U.firstName, E.classCode, C.className
+FROM users AS U 
+JOIN enrollments AS E 
+on U.userId=E.userId
+JOIN classes AS C
+ON E.classCode=C.classCode
+WHERE c.className="Math";
+
+/***Second Problem***/
+SELECT C.className,E.userId,U.userName
+FROM classes AS C
+JOIN enrollments As E
+ON C.classCode = E.classCode
+JOIN users As U 
+ON E.userId=U.userId
+WHERE U.username="ehorstead2";
+
+/*** Third Problem***/
+
+SELECT *FROM roles;
+
+BEGIN TRANSACTION;
+ INSERT INTO classes (classCode, className)
+ VALUES(6,"BIOLOGY");
+ 
+ UPDATE enrollments
+ SET roleId = roleId + 1
+ WHERE classCode = 6;
+ 
+ UPDATE enrollments
+ SET roleId = 2
+ WHERE classCode = 6;
+ 
+/*** 4th Problem ***/
+
+
