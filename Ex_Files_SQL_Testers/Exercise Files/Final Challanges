@@ -29,14 +29,18 @@ BEGIN TRANSACTION;
  INSERT INTO classes (classCode, className)
  VALUES(6,"BIOLOGY");
  
- UPDATE enrollments
- SET roleId = roleId + 1
- WHERE classCode = 6;
- 
- UPDATE enrollments
- SET roleId = 2
- WHERE classCode = 6;
+ INSERT INTO enrollments(classCode,roleId, userId)
+ VALUES(6,1,1),
+       (6,1,2),
+       (6,2,3);
+       
+ SELECT *FROM users;
+COMMIT;
  
 /*** 4th Problem ***/
+SELECT *FROM roles;
 
+UPDATE enrollments
+SET roleId=3
+WHERE roleId=2 AND classCode=4;
 
